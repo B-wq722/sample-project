@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inventory system</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+    <aside class="sidebar">
+    <h1>Stockflow</h1>
+    <nav>
+        <a href="#" onclick="showSection('dashboard')" class="active">Dashboard</a>
+        <a href="#" onclick="showSection('inventory')" class="active">Inventory</a>
+    </nav>
+    <button id="theme-toggle">Dark Mode</button>
+</aside>
+<main class="content">
+    <section id="dashboard" class="section active">
+    <h2>Dashboard</h2>
+    <div class="stats" id="stats"></div>
+    </section>
+    <section id="inventory" class="section active">
+         <h2>inventory</h2>
+         <div class="topbar">
+            <input type="text" id="search" placeholder="search items" oninput="filterItems()">
+            <button id="add-item" class="btn" onclick="showAddModal()">add new item</button>
+         </div>
+         <table class="inventory-table">
+            <thead>
+                <tr>
+                    <th>Item name</th>
+                    <th>category</th>
+                    <th>quantity</th>
+                    <th>price</th>
+                    <th>Total Value</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+         </table>
+    </section>
+</main>
+</div>
+<div id="item-modal" class="modal" style="display: none;">
+<div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2 id="modal-title">Add New Item</h2>
+    <form id="item-form">
+        <input type="hidden" id="item-id">
+        <input type="text" id="item-name" placeholder="item name" required><br/>
+        <input type="text" id="item-category" placeholder="category" required><br/>
+        <input type="number" id="item-quantity" placeholder="quantity" required><br/>
+        <input type="number" id="item-price" placeholder="price" required><br/>
+        <button type="submit" class="btn">save</button>
+        <button type="button" class="btn cancel" onclick="closeModal()">cancel</button>
+    </form>
+</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
