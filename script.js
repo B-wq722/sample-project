@@ -28,8 +28,8 @@ function renderTable(data) {
             <td>${item.name}</td>
             <td>${item.category}</td>
             <td><em>${item.quantity}</em></td>
-            <td>${parseFloat(item.price).toFixed(2)}</td>
-            <td>${value}</td>
+            <td>KSH ${parseFloat(item.price).toFixed(2)}</td>
+            <td>KSH ${value}</td>
             <td>
                 <button onclick="editItem(${item.id})">Edit</button>
                 <button onclick="deleteItem(${item.id})">Delete</button>
@@ -124,7 +124,7 @@ function updateDashboard() {
         </div>
         <div class="card">
             <h3>Total stock value</h3>
-            <h2>$${totalValue.toFixed(2)}</h2>
+            <h2>KSH ${totalValue.toFixed(2)}</h2>
         </div>
         <div class="card">
             <h3>Low Stock Items</h3>
